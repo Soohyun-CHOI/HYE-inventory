@@ -1,0 +1,24 @@
+.page-layout {
+    width: 100%;
+    padding-left: var(--content-padding-mobile);
+    padding-right: var(--content-padding-mobile);
+}
+
+.page-layout__content {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .page-layout {
+        padding-left: var(--content-padding-tablet);
+        padding-right: var(--content-padding-tablet);
+    }
+}
+
+@media (min-width: 1024px) {
+    .page-layout {
+        padding-left: var(--content-padding-desktop);
+        padding-right: var(--content-padding-desktop);
+    }
+}

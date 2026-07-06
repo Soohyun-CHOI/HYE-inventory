@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {getCatalog} from "../services/api.js";
 import InventoryTable from "../components/InventoryTable.jsx";
+import PageLayout from "../components/layout/PageLayout";
 
 export default function Dashboard() {
     const [items, setItems] = useState([]);
@@ -22,7 +23,7 @@ export default function Dashboard() {
     }, [filter]);
 
     return (
-        <div>
+        <PageLayout>
             <h1>Current Inventory</h1>
             <div>
                 <button onClick={() => setFilter("active")} disabled={filter === "active"}>
@@ -48,6 +49,6 @@ export default function Dashboard() {
                     }}
                 />
             )}
-        </div>
+        </PageLayout>
     );
 }

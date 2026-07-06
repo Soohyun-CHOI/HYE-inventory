@@ -1,0 +1,41 @@
+:root {
+    /* Spacing scale= */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+
+    /* Layout */
+    --content-max-width: 1280px;
+    --content-padding-mobile: 16px;
+    --content-padding-tablet: 24px;
+    --content-padding-desktop: 32px;
+
+    /* Colors — status badges */
+    --color-status-out-bg: #f3f4f6;
+    --color-status-out-text: #6b7280;
+    --color-status-awaiting-bg: #fef3c7;
+    --color-status-awaiting-text: #92400e;
+    --color-status-available-bg: #dcfce7;
+    --color-status-available-text: #166534;
+
+    /* Colors — base */
+    --color-text-primary: #111827;
+    --color-text-secondary: #6b7280;
+    --color-border: #e5e7eb;
+    --color-surface: #ffffff;
+    --color-surface-hover: #f9fafb;
+
+    /* Typography */
+    --font-size-title: 24px;
+    --font-size-table-header: 14px;
+    --font-size-body: 14px;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+
+    /* Table */
+    --table-row-height: 44px;
+}
