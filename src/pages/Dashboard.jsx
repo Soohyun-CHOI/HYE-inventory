@@ -37,6 +37,9 @@ export default function Dashboard() {
             {!loading && !error && (
                 <InventoryTable
                     items={items}
+                    onOrder={(item) => {
+                        // TODO: open the order modal for this item
+                    }}
                     onReceive={(item) => {
                         // TODO: open the receive-confirm modal for this item
                     }}

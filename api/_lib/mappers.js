@@ -35,6 +35,7 @@ export const FIELDS = {
     inventoryCatalog: {
         mdgCode: "MDG Code",
         category: "Category",
+        categoryName: "Category Name",
         categoryImage: "Category Image (from Category)",
         size: "Size",
         partNumber: "Part Number",
