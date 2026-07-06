@@ -30,9 +30,25 @@ export default function OrderForm() {
             <h1>New Order</h1>
             <MaterialEntryForm catalog={catalog} onSubmit={addLineItem}/>
             <ul>
-                {lineItems.map((li, i) => (
-                    <li key={i}>{li.materialId} × {li.qty}</li>
-                ))}
+                {lineItems.map((li, i) => {
+                    const material = catalog.find(item => item.id === li.materialId);
+
+                    return (
+                        <li key={i}>
+                            {material ? (
+                                <>
+                                    {material.mdgCode} - {material.categoryName?.[0]} -{" "}
+                                    {material.size} - {material.manufacturerName?.[0]} ×{" "}
+                                    {li.qty}{" "}{material.unit}
+                                </>
+                            ) : (
+                                <>
+                                    {li.materialId} × {li.qty}
+                                </>
+                            )}
+                        </li>
+                    )
+                })}
             </ul>
             <button disabled={lineItems.length === 0} onClick={handleCreateOrder}>
                 Create order

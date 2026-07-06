@@ -14,6 +14,7 @@ const LAST_ACTIVITY_WIDTH = 120;
 const ACTIONS_WIDTH = 150;
 
 let measureCanvas;
+
 function measureTextWidth(text, font) {
     if (!measureCanvas) measureCanvas = document.createElement("canvas");
     const ctx = measureCanvas.getContext("2d");
@@ -75,7 +76,8 @@ export default function InventoryTable({items, onOrder, onReceive, onIssue}) {
     }, []);
 
     return (
-        <table ref={tableRef} style={{width: "100%", borderCollapse: "collapse", tableLayout: "fixed", textAlign: "center"}}>
+        <table ref={tableRef}
+               style={{width: "100%", borderCollapse: "collapse", tableLayout: "fixed", textAlign: "center"}}>
             <thead>
             <tr style={{textAlign: "center", borderBottom: "1px solid #E5E7EB"}}>
                 <th style={{width: CATEGORY_IMAGE_WIDTH}}>Category Image</th>
@@ -128,13 +130,13 @@ export default function InventoryTable({items, onOrder, onReceive, onIssue}) {
                         <td style={{borderTop: groupBorder}}><StatusBadge status={item.status}/></td>
                         <td style={{borderTop: groupBorder}}>{typeof item.lastActivity === "string" ? item.lastActivity : "—"}</td>
                         <td style={{borderTop: groupBorder}}>
+                            <button onClick={() => onOrder(item)}>Order</button>
                             {item.backOrder > 0 && (
                                 <button onClick={() => onReceive(item)}>Receive</button>
                             )}
                             {item.stock > 0 && (
                                 <button onClick={() => onIssue(item)}>Issue</button>
                             )}
-                            <button onClick={() => onOrder(item)}>Order</button>
                         </td>
                     </tr>
                 );
